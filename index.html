@@ -5,83 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Características de la Casa</title>
     <style>
+        :root {
+            --bg-color-light: #f0f0f0;
+            --text-color-light: #000000;
+            --bg-color-dark: #1c1c1c;
+            --text-color-dark: #ffffff;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: white;
-            color: black;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+            transition: background-color 0.3s, color 0.3s;
         }
 
-        h1, h2 {
-            text-align: center;
+        .theme-dark {
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-dark);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
         }
 
-        .dark-mode {
-            background-color: #121212;
-            color: white;
-        }
-
-        .theme-toggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background-color: #007BFF;
-            color: white;
+        button {
+            background-color: #555;
+            color: #fff;
             border: none;
-            padding: 10px 20px;
+            padding: 10px;
             cursor: pointer;
             border-radius: 5px;
-            font-size: 16px;
         }
 
-        .theme-toggle:hover {
-            background-color: #0056b3;
+        h1 {
+            text-align: center;
+            margin-top: 20px;
         }
 
-        section {
+        .content {
+            padding: 20px;
+        }
+
+        .section {
             margin-bottom: 20px;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .section h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
         }
 
-        li {
-            margin-bottom: 5px;
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section ul li {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
 
-    <button class="theme-toggle" onclick="toggleTheme()">Cambiar Tema</button>
-
-    <div class="container">
+    <header>
         <h1>Características de la Casa</h1>
-        <section>
-            <h2>Datos Generales</h2>
+        <button id="theme-toggle">Cambiar Tema</button>
+    </header>
+
+    <div class="content">
+        <div class="section">
+            <h2>Características de la Casa</h2>
             <ul>
                 <li>Tamaño: 800 m², 3 pisos.</li>
                 <li>Estrato: 5 en Colombia.</li>
                 <li>Jardín: 150 m².</li>
                 <li>Gimnasio: 20 m².</li>
-                <li>Piscina: 40 m² (forma rectangular de 5 x 8 m) con iluminación RGB, cascadas, nado contra olas y climatización.</li>
+                <li>Piscina: 40 m² (5 x 8 m) con iluminación RGB, cascadas, nado contra olas y climatización.</li>
                 <li>Ascensor: Capacidad para 10 personas.</li>
                 <li>Parqueadero: 250 m².</li>
                 <li>Sala Secreta: 50 m².</li>
                 <li>Ubicación: Zona lujosa de Medellín.</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Seguridad</h2>
             <ul>
                 <li>Puerta acorazada: Nivel 6.</li>
@@ -92,9 +107,9 @@
                 <li>Valla eléctrica y pinchos en las cercas.</li>
                 <li>Escoltas armados con chalecos antibalas.</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Climatización</h2>
             <ul>
                 <li>Aire acondicionado: WindFree de Samsung.</li>
@@ -102,16 +117,16 @@
                 <li>Dos humidificadores.</li>
                 <li>Piscina térmica: Con olas y iluminación RGB.</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Diseño Interior</h2>
             <ul>
                 <li>Piso: Mármol y piso térmico.</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Setup de PC Gamer</h2>
             <ul>
                 <li>Sistema Operativo: Windows 11 Pro.</li>
@@ -126,9 +141,9 @@
                 <li>UPS: APC Smart-UPS On-Line SRT 3000VA RM.</li>
                 <li>Precio Total: $5,900.</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Consolas y Accesorios</h2>
             <ul>
                 <li>Xbox Series X.</li>
@@ -138,9 +153,24 @@
                 <li>Precio Total: $1,250.</li>
                 <li>PlayStation 5 Pro.</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
+        <!-- Continuar agregando secciones de la misma manera -->
+
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('theme-dark');
+        });
+    </script>
+
+</body>
+</html>
+        <div class="section">
             <h2>Setup de Monitor y Periféricos</h2>
             <ul>
                 <li>Monitores: 3 x ASUS ROG Swift PG32UCDM 32" 4K 240Hz OLED.</li>
@@ -155,9 +185,9 @@
                 <li>Altavoces: Logitech G560 LIGHTSYNC RGB.</li>
                 <li>Precio Total: $14,570.</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Extras para Optimizar el Espacio</h2>
             <ul>
                 <li>Soportes para monitores: Ergotron HX Monitor Arm (x3).</li>
@@ -165,58 +195,58 @@
                 <li>Alfombra Gaming: Razer Floor Rug.</li>
                 <li>Extras Totales: $1,150.</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Iluminación</h2>
             <ul>
                 <li>Lámparas: Elgato Key Light Air (x2) - $260.</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Sala de Cine</h2>
             <ul>
                 <li>Televisor: Neo QLED 8K de 85" o Premiere 4K de Samsung.</li>
                 <li>Altavoces: Samsung.</li>
                 <li>Insonorización para evitar ruidos.</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Sostenibilidad</h2>
             <ul>
                 <li>Sistema de recolección de agua: El agua va a los tanques y se envía a las tuberías de la casa con un filtro para que sea potable.</li>
                 <li>Buen sistema de energía solar.</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Equipamiento de Moto</h2>
             <ul>
                 <li>Cascos profesionales: 5 millones de pesos.</li>
                 <li>Airbag de moto.</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Conectividad</h2>
             <ul>
                 <li>Cable Ethernet: CAT 7 en toda la casa.</li>
                 <li>Módem: ASUS con Wi-Fi 7.</li>
                 <li>Expansores de internet.</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Cosas Extras de los Baños</h2>
             <ul>
                 <li>Sistema de drenaje profesional.</li>
                 <li>Filtros de ducha Sanatée en todos los baños.</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Sección de Carros</h2>
             <ul>
                 <li>Tesla Model X Plaid (blindado).</li>
@@ -226,20 +256,9 @@
                 <li>Kawasaki Ninja H2R.</li>
                 <li>Dos Raptor 700R tuneadas al máximo (blindadas).</li>
             </ul>
-        </section>
-    </div>
+        </div>
 
-    <script>
-        function toggleTheme() {
-            document.body.classList.toggle('dark-mode');
-        }
-    </script>
-</body>
-</html>
-  </ul>
-        </section>
-
-        <section>
+        <div class="section">
             <h2>Estudio de Editores</h2>
             <ul>
                 <li>Edición: Dos estaciones de trabajo con PCs similares a tu setup.</li>
@@ -248,9 +267,9 @@
                 <li>Ventanas: Blindadas.</li>
                 <li>Impresoras: Tres impresoras HP OfficeJet Pro 8025e.</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
+        <div class="section">
             <h2>Dispositivos Móviles</h2>
             <ul>
                 <li>iPhone 15 Pro Max de 1TB.</li>
@@ -260,3 +279,5 @@
                 <li>iPad M4 Pro.</li>
                 <li>Galaxy Book 4 Ultra con i9-Ultra 14900K.</li>
                 <li>Meta Quest 3S.</li>
+            </ul>
+        </div>
