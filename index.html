@@ -3,93 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Información de la Casa y Setup</title>
+    <title>Características de la Casa</title>
     <style>
+        :root {
+            --bg-color-light: #f0f0f0;
+            --text-color-light: #000000;
+            --bg-color-dark: #1c1c1c;
+            --text-color-dark: #ffffff;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #121212; /* Color de fondo oscuro */
-            color: #E0E0E0; /* Color de texto claro */
-        }
-        h1, h2 {
-            color: #FFFFFF; /* Color de los encabezados */
-        }
-        .container {
-            background: #1E1E1E; /* Fondo más claro para el contenedor */
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-        }
-        ul {
-            list-style-type: none; /* Eliminar viñetas de las listas */
+            margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+            transition: background-color 0.3s, color 0.3s;
         }
-        li {
-            margin: 10px 0;
+
+        .theme-dark {
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-dark);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        button {
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section ul li {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Información de la Casa y Setup</h1>
 
-        <h2>Casa</h2>
-        <ul>
-            <li><strong>Tamaño:</strong> 55 metros cuadrados, 3 pisos.</li>
-            <li><strong>Ubicación:</strong> Estrato 5 en Colombia.</li>
-            <li><strong>Características de Seguridad:</strong>
-                <ul>
-                    <li>Puerta de acorazado nivel 6.</li>
-                    <li>Ventanas blindadas.</li>
-                    <li>Portón inteligente.</li>
-                    <li>Valla eléctrica.</li>
-                    <li>Pinchos en las cercas.</li>
-                </ul>
-            </li>
-            <li><strong>Precio Total:</strong> $250,000.</li>
-            <li><strong>Instalaciones:</strong>
-                <ul>
-                    <li>Piscina climatizada con olas y nado en contra (cascadas en la piscina).</li>
-                    <li>Spa.</li>
-                    <li>Gimnasio inteligente.</li>
-                    <li>Jardín.</li>
-                </ul>
-            </li>
-            <li><strong>Climatización:</strong> Aire acondicionado WindFree, filtro de aire y humidificadores.</li>
-            <li><strong>Diseño Interior:</strong> Piso de mármol y térmico.</li>
-            <li><strong>Puerta del Parqueadero:</strong> Automática.</li>
-        </ul>
+    <header>
+        <h1>Características de la Casa</h1>
+        <button id="theme-toggle">Cambiar Tema</button>
+    </header>
 
-        <h2>Setup</h2>
-        <ul>
-            <li><strong>Presupuesto:</strong> $25,000 para configuración de PC para dos editores y $5,000 en artículos para distintos setups.</li>
-            <li><strong>Componentes Preferidos:</strong>
-                <ul>
-                    <li>Procesador Intel i9-14950K.</li>
-                    <li>Placa base Z790 E 2 con WiFi 7.</li>
-                    <li>Fuente de poder Thor de ASUS de 1600 watts con pantalla.</li>
-                    <li>Teclado Azoth de ASUS.</li>
-                </ul>
-            </li>
-            <li><strong>Planificación:</strong> Sala insonorizada con aire acondicionado Wind Free, filtro de aire y humidificadores.</li>
-            <li><strong>Sala de Cine:</strong> Televisor Neo QLED 8K de 85 pulgadas o Premiere 4K de Samsung, altavoces de Samsung.</li>
-            <li><strong>Consolas:</strong> Considerando una PlayStation 5 Pro para combinar con el Xbox.</li>
-            <li><strong>Otros Dispositivos:</strong>
-                <ul>
-                    <li>Drones: 2 Mavic 3 Pro, Cine 2, Air 3, Avata 2, 1 Mini 4 Pro y 2 DJI Neo.</li>
-                    <li>Dispositivos móviles: ASUS ROG Phone 8 con 24 GB de RAM, iPhone 15 Pro Max y Samsung Galaxy S24 Plus.</li>
-                    <li>Batería de respaldo de alta capacidad.</li>
-                </ul>
-            </li>
-        </ul>
+    <div class="content">
+        <div class="section">
+            <h2>Características de la Casa</h2>
+            <ul>
+                <li>Tamaño: 800 m², 3 pisos.</li>
+                <li>Estrato: 5 en Colombia.</li>
+                <li>Jardín: 150 m².</li>
+                <li>Gimnasio: 20 m².</li>
+                <li>Piscina: 40 m² (5 x 8 m) con iluminación RGB, cascadas, nado contra olas y climatización.</li>
+                <li>Ascensor: Capacidad para 10 personas.</li>
+                <li>Parqueadero: 250 m².</li>
+                <li>Sala Secreta: 50 m².</li>
+                <li>Ubicación: Zona lujosa de Medellín.</li>
+            </ul>
+        </div>
 
-        <h2>Seguridad y Equipamiento</h2>
-        <ul>
-            <li><strong>Seguridad Adicional:</strong> Sala secreta en el parqueadero de 20 metros cuadrados, blindada, con ventilación, aire acondicionado WindFree, purificador de aire, humidificadores, baño, camarote, suministros, nevera y cámaras.</li>
-            <li><strong>Electrodomésticos:</strong> Presupuesto de $250,000 para la línea Bespoke de Samsung.</li>
-            <li><strong>Campana:</strong> Considerando una campana Bespoke Hood.</li>
-        </ul>
+        <div class="section">
+            <h2>Seguridad</h2>
+            <ul>
+                <li>Puerta acorazada: Nivel 6.</li>
+                <li>Ventanas: Blindadas en toda la casa, incluyendo las del estudio.</li>
+                <li>Sala secreta en el parqueadero: 20 m² con armas y sistema de seguridad.</li>
+                <li>Acceso: Botón secreto, huella y clave.</li>
+                <li>Portón inteligente: Controlable por smartphone.</li>
+                <li>Valla eléctrica y pinchos en las cercas.</li>
+                <li>Escoltas armados con chalecos antibalas.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Climatización</h2>
+            <ul>
+                <li>Aire acondicionado: WindFree de Samsung.</li>
+                <li>Filtro de aire: Samsung.</li>
+                <li>Dos humidificadores.</li>
+                <li>Piscina térmica: Con olas y iluminación RGB.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Diseño Interior</h2>
+            <ul>
+                <li>Piso: Mármol y piso térmico.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Setup de PC Gamer</h2>
+            <ul>
+                <li>Sistema Operativo: Windows 11 Pro.</li>
+                <li>Procesador: Intel Core i9-14900K.</li>
+                <li>Tarjeta Gráfica: NVIDIA RTX 4090.</li>
+                <li>Placa Base: ASUS ROG Strix Z790-E Gaming WiFi 7.</li>
+                <li>RAM: G.Skill Trident Z5 RGB 128GB DDR5 7200MHz.</li>
+                <li>Almacenamiento: 5 SSD NVMe Samsung 990 Pro de 4TB.</li>
+                <li>Refrigeración Líquida: Corsair iCUE H150i Elite Capellix XT 360mm.</li>
+                <li>Fuente de Alimentación: ASUS ROG Thor 1600W Platinum.</li>
+                <li>Chasis: Lian Li O11 Dynamic EVO XL.</li>
+                <li>UPS: APC Smart-UPS On-Line SRT 3000VA RM.</li>
+                <li>Precio Total: $5,900.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Consolas y Accesorios</h2>
+            <ul>
+                <li>Xbox Series X.</li>
+                <li>Mandos: Pro ASUS ROG Raikiri Pro (x2).</li>
+                <li>Base de Carga: Razer Universal Quick Charging Stand.</li>
+                <li>Auriculares: ASUS ROG Theta 7.1.</li>
+                <li>Precio Total: $1,250.</li>
+                <li>PlayStation 5 Pro.</li>
+            </ul>
+        </div>
+
+        <!-- Continuar agregando secciones de la misma manera -->
+
     </div>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('theme-dark');
+        });
+    </script>
+
 </body>
 </html>
