@@ -5,269 +5,190 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Características de la Casa</title>
     <style>
-        :root {
-            --bg-color-light: #f0f0f0;
-            --text-color-light: #000000;
-            --bg-color-dark: #1c1c1c;
-            --text-color-dark: #ffffff;
-        }
-
         body {
-            margin: 0;
-            padding: 0;
             font-family: Arial, sans-serif;
-            background-color: var(--bg-color-light);
-            color: var(--text-color-light);
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            color: #333;
             transition: background-color 0.3s, color 0.3s;
         }
-
-        .theme-dark {
-            background-color: var(--bg-color-dark);
-            color: var(--text-color-dark);
+        .dark-mode {
+            background-color: #121212;
+            color: #f0f0f0;
         }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-        }
-
-        button {
-            background-color: #555;
-            color: #fff;
+        .theme-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
             border: none;
-            padding: 10px;
-            cursor: pointer;
             border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
         }
-
         h1 {
             text-align: center;
-            margin-top: 20px;
         }
-
-        .content {
-            padding: 20px;
-        }
-
-        .section {
+        .info-section {
             margin-bottom: 20px;
         }
-
-        .section h2 {
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+        .discord-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
         }
-
-        .section ul {
-            list-style: none;
-            padding-left: 0;
+        .discord-link img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
         }
-
-        .section ul li {
-            margin-bottom: 10px;
+        .discord-link a {
+            color: #5865F2;
+            text-decoration: none;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
+    <button class="theme-toggle" onclick="toggleTheme()">Cambiar Tema</button>
 
-    <header>
-        <h1>Características de la Casa</h1>
-        <button id="theme-toggle">Cambiar Tema</button>
-    </header>
+    <h1>Características de la Casa</h1>
 
-    <div class="content">
-        <div class="section">
-            <h2>Características de la Casa</h2>
-            <ul>
-                <li>Tamaño: 800 m², 3 pisos.</li>
-                <li>Estrato: 5 en Colombia.</li>
-                <li>Jardín: 150 m².</li>
-                <li>Gimnasio: 20 m².</li>
-                <li>Piscina: 40 m² (5 x 8 m) con iluminación RGB, cascadas, nado contra olas y climatización.</li>
-                <li>Ascensor: Capacidad para 10 personas.</li>
-                <li>Parqueadero: 250 m².</li>
-                <li>Sala Secreta: 50 m².</li>
-                <li>Ubicación: Zona lujosa de Medellín.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Seguridad</h2>
-            <ul>
-                <li>Puerta acorazada: Nivel 6.</li>
-                <li>Ventanas: Blindadas en toda la casa, incluyendo las del estudio.</li>
-                <li>Sala secreta en el parqueadero: 20 m² con armas y sistema de seguridad.</li>
-                <li>Acceso: Botón secreto, huella y clave.</li>
-                <li>Portón inteligente: Controlable por smartphone.</li>
-                <li>Valla eléctrica y pinchos en las cercas.</li>
-                <li>Escoltas armados con chalecos antibalas.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Climatización</h2>
-            <ul>
-                <li>Aire acondicionado: WindFree de Samsung.</li>
-                <li>Filtro de aire: Samsung.</li>
-                <li>Dos humidificadores.</li>
-                <li>Piscina térmica: Con olas y iluminación RGB.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Diseño Interior</h2>
-            <ul>
-                <li>Piso: Mármol y piso térmico.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Setup de PC Gamer</h2>
-            <ul>
-                <li>Sistema Operativo: Windows 11 Pro.</li>
-                <li>Procesador: Intel Core i9-14900K.</li>
-                <li>Tarjeta Gráfica: NVIDIA RTX 4090.</li>
-                <li>Placa Base: ASUS ROG Strix Z790-E Gaming WiFi 7.</li>
-                <li>RAM: G.Skill Trident Z5 RGB 128GB DDR5 7200MHz.</li>
-                <li>Almacenamiento: 5 SSD NVMe Samsung 990 Pro de 4TB.</li>
-                <li>Refrigeración Líquida: Corsair iCUE H150i Elite Capellix XT 360mm.</li>
-                <li>Fuente de Alimentación: ASUS ROG Thor 1600W Platinum.</li>
-                <li>Chasis: Lian Li O11 Dynamic EVO XL.</li>
-                <li>UPS: APC Smart-UPS On-Line SRT 3000VA RM.</li>
-                <li>Precio Total: $5,900.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Consolas y Accesorios</h2>
-            <ul>
-                <li>Xbox Series X.</li>
-                <li>Mandos: Pro ASUS ROG Raikiri Pro (x2).</li>
-                <li>Base de Carga: Razer Universal Quick Charging Stand.</li>
-                <li>Auriculares: ASUS ROG Theta 7.1.</li>
-                <li>Precio Total: $1,250.</li>
-                <li>PlayStation 5 Pro.</li>
-            </ul>
-        </div>
-
-        <!-- Continuar agregando secciones de la misma manera -->
-
+    <div class="info-section">
+        <h2>Tamaño</h2>
+        <p>800 m², 3 pisos. Estrato: 5 en Colombia.</p>
+        <p>Jardín: 150 m². Gimnasio: 20 m². Piscina: 40 m² (5x8 m) con iluminación RGB, cascadas, nado contra olas y climatización.</p>
+        <p>Ascensor con capacidad para 10 personas. Parqueadero: 250 m². Sala Secreta: 50 m². Zona lujosa de Medellín.</p>
     </div>
 
-    <script>
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
+    <div class="info-section">
+        <h2>Seguridad</h2>
+        <p>Puerta acorazada: Nivel 6. Ventanas blindadas en toda la casa, incluyendo las del estudio.</p>
+        <p>Sala secreta en el parqueadero con armas y sistema de seguridad. Acceso: Botón secreto, huella y clave.</p>
+        <p>Portón inteligente controlable por smartphone. Valla eléctrica y pinchos en las cercas. Escoltas armados con chalecos antibalas.</p>
+    </div>
 
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('theme-dark');
-        });
-    </script>
+    <div class="info-section">
+        <h2>Climatización</h2>
+        <p>Aire acondicionado WindFree de Samsung. Filtro de aire Samsung. Dos humidificadores.</p>
+        <p>Piscina térmica con olas y iluminación RGB.</p>
+    </div>
 
-</body>
-</html>
-        <div class="section">
-            <h2>Setup de Monitor y Periféricos</h2>
-            <ul>
-                <li>Monitores: 3 x ASUS ROG Swift PG32UCDM 32" 4K 240Hz OLED.</li>
-                <li>Teclado: ASUS ROG Azoth.</li>
-                <li>Ratón: Razer Viper V2 Pro Wireless.</li>
-                <li>Mouse Pad: Corsair MM700 RGB Extended.</li>
-                <li>Silla Gamer: Herman Miller x Logitech G Embody.</li>
-                <li>Escritorio: Secretlab Magnus Pro XL Metal Desk.</li>
-                <li>Iluminación: Philips Hue Play Gradient Lightstrip.</li>
-                <li>Micrófono: Shure SM7B + GoXLR Mixer.</li>
-                <li>Cámara: Sony Alpha 7 IV + Lente 28-70mm.</li>
-                <li>Altavoces: Logitech G560 LIGHTSYNC RGB.</li>
-                <li>Precio Total: $14,570.</li>
-            </ul>
-        </div>
+    <div class="info-section">
+        <h2>Diseño Interior</h2>
+        <p>Piso de mármol y piso térmico.</p>
+    </div>
 
-        <div class="section">
-            <h2>Extras para Optimizar el Espacio</h2>
-            <ul>
-                <li>Soportes para monitores: Ergotron HX Monitor Arm (x3).</li>
-                <li>Organizador de cables: Secretlab Magnetic Cable Management Bundle.</li>
-                <li>Alfombra Gaming: Razer Floor Rug.</li>
-                <li>Extras Totales: $1,150.</li>
-            </ul>
-        </div>
+    <div class="info-section">
+        <h2>Setup de PC Gamer</h2>
+        <ul>
+            <li>Sistema Operativo: Windows 11 Pro</li>
+            <li>Procesador: Intel Core i9-14900K</li>
+            <li>Tarjeta Gráfica: NVIDIA RTX 4090</li>
+            <li>Placa Base: ASUS ROG Strix Z790-E Gaming WiFi 7</li>
+            <li>RAM: G.Skill Trident Z5 RGB 128GB DDR5 7200MHz</li>
+            <li>Almacenamiento: 5 SSD NVMe Samsung 990 Pro de 4TB</li>
+            <li>Refrigeración Líquida: Corsair iCUE H150i Elite Capellix XT</li>
+            <li>Fuente de Alimentación: ASUS ROG Thor 1600W Platinum</li>
+            <li>Precio Total: $5,900</li>
+        </ul>
+    </div>
 
-        <div class="section">
-            <h2>Iluminación</h2>
-            <ul>
-                <li>Lámparas: Elgato Key Light Air (x2) - $260.</li>
-            </ul>
-        </div>
+    <div class="info-section">
+        <h2>Consolas y Accesorios</h2>
+        <ul>
+            <li>Xbox Series X</li>
+            <li>Mandos: Pro ASUS ROG Raikiri Pro (x2)</li>
+            <li>Base de Carga: Razer Universal Quick Charging Stand</li>
+            <li>Auriculares: ASUS ROG Theta 7.1</li>
+            <li>Precio Total: $1,250</li>
+            <li>PlayStation 5 Pro</li>
+        </ul>
+    </div>
 
-        <div class="section">
-            <h2>Sala de Cine</h2>
-            <ul>
-                <li>Televisor: Neo QLED 8K de 85" o Premiere 4K de Samsung.</li>
-                <li>Altavoces: Samsung.</li>
-                <li>Insonorización para evitar ruidos.</li>
-            </ul>
-        </div>
+    <div class="info-section">
+        <h2>Setup de Monitor y Periféricos</h2>
+        <ul>
+            <li>Monitores: 3 x ASUS ROG Swift PG32UCDM 32" 4K 240Hz OLED</li>
+            <li>Teclado: ASUS ROG Azoth</li>
+            <li>Ratón: Razer Viper V2 Pro Wireless</li>
+            <li>Mouse Pad: Corsair MM700 RGB Extended</li>
+            <li>Silla Gamer: Herman Miller x Logitech G Embody</li>
+            <li>Escritorio: Secretlab Magnus Pro XL Metal Desk</li>
+            <li>Iluminación: Philips Hue Play Gradient Lightstrip</li>
+            <li>Micrófono: Shure SM7B + GoXLR Mixer</li>
+            <li>Cámara: Sony Alpha 7 IV + Lente 28-70mm</li>
+            <li>Altavoces: Logitech G560 LIGHTSYNC RGB</li>
+            <li>Precio Total: $14,570</li>
+        </ul>
+    </div>
 
-        <div class="section">
-            <h2>Sostenibilidad</h2>
-            <ul>
-                <li>Sistema de recolección de agua: El agua va a los tanques y se envía a las tuberías de la casa con un filtro para que sea potable.</li>
-                <li>Buen sistema de energía solar.</li>
-            </ul>
-        </div>
+    <div class="info-section">
+        <h2>Extras para Optimizar el Espacio</h2>
+        <ul>
+            <li>Soportes para monitores: Ergotron HX Monitor Arm (x3)</li>
+            <li>Organizador de cables: Secretlab Magnetic Cable Management Bundle</li>
+            <li>Alfombra Gaming: Razer Floor Rug</li>
+            <li>Extras Totales: $1,150</li>
+        </ul>
+    </div>
 
-        <div class="section">
-            <h2>Equipamiento de Moto</h2>
-            <ul>
-                <li>Cascos profesionales: 5 millones de pesos.</li>
-                <li>Airbag de moto.</li>
-            </ul>
-        </div>
+    <div class="info-section">
+        <h2>Iluminación</h2>
+        <p>Lámparas: Elgato Key Light Air (x2) - $260.</p>
+    </div>
 
-        <div class="section">
-            <h2>Conectividad</h2>
-            <ul>
-                <li>Cable Ethernet: CAT 7 en toda la casa.</li>
-                <li>Módem: ASUS con Wi-Fi 7.</li>
-                <li>Expansores de internet.</li>
-            </ul>
-        </div>
+    <div class="info-section">
+        <h2>Sala de Cine</h2>
+        <p>Televisor: Neo QLED 8K de 85" o Premiere 4K de Samsung. Altavoces: Samsung. Insonorización para evitar ruidos.</p>
+    </div>
 
-        <div class="section">
-            <h2>Cosas Extras de los Baños</h2>
-            <ul>
-                <li>Sistema de drenaje profesional.</li>
-                <li>Filtros de ducha Sanatée en todos los baños.</li>
-            </ul>
-        </div>
+    <div class="info-section">
+        <h2>Sostenibilidad</h2>
+        <p>Sistema de recolección de agua: El agua va a los tanques y se envía a las tuberías de la casa con un filtro para que sea potable.</p>
+        <p>Buen sistema de energía solar.</p>
+    </div>
 
-        <div class="section">
-            <h2>Sección de Carros</h2>
-            <ul>
-                <li>Tesla Model X Plaid (blindado).</li>
-                <li>Cadillac (blindado).</li>
-                <li>Mazda CX-9 (blindado).</li>
-                <li>Yamaha MT-09.</li>
-                <li>Kawasaki Ninja H2R.</li>
-                <li>Dos Raptor 700R tuneadas al máximo (blindadas).</li>
-            </ul>
-        </div>
+    <div class="info-section">
+        <h2>Equipamiento de Moto</h2>
+        <p>Cascos profesionales: 5 millones de pesos. Airbag de moto.</p>
+    </div>
 
-        <div class="section">
-            <h2>Estudio de Editores</h2>
-            <ul>
-                <li>Edición: Dos estaciones de trabajo con PCs similares a tu setup.</li>
-                <li>Cámaras profesionales y luces para grabación.</li>
-                <li>Insonorización del estudio.</li>
-                <li>Ventanas: Blindadas.</li>
-                <li>Impresoras: Tres impresoras HP OfficeJet Pro 8025e.</li>
-            </ul>
-        </div>
+    <div class="info-section">
+        <h2>Conectividad</h2>
+        <p>Cable Ethernet: CAT 7 en toda la casa. Módem: ASUS con Wi-Fi 7. Expansores de internet.</p>
+    </div>
+
+    <div class="info-section">
+        <h2>Cosas Extras de los Baños</h2>
+        <p>Sistema de drenaje profesional. Filtros de ducha Sanatée en todos los baños.</p>
+    </div>
+
+    <div class="info-section">
+        <h2>Sección de Carros</h2>
+        <ul>
+            <li>Tesla Model X Plaid (blindado)</li>
+            <li>Cadillac (blindado)</li>
+            <li>Mazda CX-9 (blindado)</li>
+            <li>Yamaha MT-09</li>
+            <li>Kawasaki Ninja H2R</li>
+            <li>Dos Raptor 700R tuneadas al máximo (blindadas)</li>
+        </ul>
+    </div>
+
+    <div class="info-section">
+        <h2>Estudio de Editores</h2>
+        <p>Edición: Dos estaciones de trabajo con PCs similares a tu setup. Cámaras profesionales y luces para grabación.</p>
+        <p>Insonorización del estudio. Ventanas blindadas.</p>
+        <p>Impresoras: Tres impresoras HP OfficeJet Pro 8025e.</p>
+    </div>
+
+    <div class="info-section">
+        <h2>Dispositivos Móviles</h
 
         <div class="section">
             <h2>Dispositivos Móviles</h2>
